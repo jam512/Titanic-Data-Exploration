@@ -1,0 +1,39 @@
+In this assignment, you will perform feature engineering and logistic regression on Titanic dataset, 
+where you will create new columns, transform variables into numerical values, and handle missing values! 
+This is done to find whether the passenger had survived or not. 
+Our main aim here is to find the accuracy score of our model.
+
+Link to Titanic dataset: 
+https://raw.githubusercontent.com/Shreyas3108/Titanic-EDA-and-Survival-prediction/master/train.csv 
+https://raw.githubusercontent.com/Shreyas3108/Titanic-EDA-and-Survival-prediction/master/test.csv
+
+Perform the following: 
+
+1) Import the required libraries (sklearn, pandas, numpy). Import datasets. 
+Concatenate the datasets. Display first 5 rows.
+
+2) Remove NaN values from the column ‘Survived’. (Hint: use .dropna()) 
+
+3) Create a new column 'Has_Cabin' that tells you whether passengers had a cabin or not. 
+(Hint: use .isnull() method in “Cabin” column)
+
+4) Create a new column “Title”, which will contain the titles of the passengers such as Mr., Mrs., etc. There should be five titles: Mr, Mrs, Master, Miss, and Special. 
+(Hint: Use regular expression to replace the titles)
+
+ 5) Impute the missing values using .fillna() method.
+
+ 6) Create two new columns “Categorical_age” and “Categorical_fare”, where you will put people that are within a certain range of age or fare in the same bin. 
+You can do this by using the pandas function qcut() to bin your numerical data. 
+(This is done because there is a range of ages and fares, so there might be fluctuations in those numbers that don't reflect patterns in the data, which might be noise.)
+(https://pandas.pydata.org/pandas-docs/stable/generated/pandas.qcut.html)
+
+7) Drop columns Cabin, Name, Passengerid, Ticket, Age, Fare, SibSp, Parch.
+
+8) Transform all variables into numeric ones using get_dummies(). 
+
+9) Now we need training set and testing set. Use train_test_split() to split your dataset. 
+X(Features) will be the dataset values without the column “Survived” and y(Targets) will be your “Survived” column values. 
+
+10) Use logistic regression by passing your X_train and y_train.
+
+11) Print the accuracy score.
